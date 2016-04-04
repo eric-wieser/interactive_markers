@@ -43,7 +43,7 @@ from threading import Lock
 
 
 # Represents a single marker
-class MarkerContext:
+class MarkerContext(object):
 
     def __init__(self):
         self.last_feedback = rospy.Time.now()
@@ -54,7 +54,7 @@ class MarkerContext:
 
 
 # Represents an update to a single marker
-class UpdateContext:
+class UpdateContext(object):
     FULL_UPDATE = 0
     POSE_UPDATE = 1
     ERASE = 2
@@ -70,7 +70,7 @@ class UpdateContext:
 ##
 ## Note: Keep in mind that changes made by calling insert(), erase(), setCallback() etc.
 ##       are not applied until calling applyChanges().
-class InteractiveMarkerServer:
+class InteractiveMarkerServer(object):
     DEFAULT_FEEDBACK_CB = 255
 
     ## @brief Create an InteractiveMarkerServer and associated ROS connections
